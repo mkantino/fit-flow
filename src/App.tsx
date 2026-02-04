@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import WorkoutCheckIn from "./pages/WorkoutCheckIn";
 import FeedbackView from "./pages/FeedbackView";
 import CoachOverview from "./pages/CoachOverview";
@@ -18,8 +19,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
+          
           {/* Athlete Flow */}
-          <Route path="/" element={<WorkoutCheckIn />} />
+          <Route path="/workout" element={<WorkoutCheckIn />} />
           <Route path="/feedback" element={<FeedbackView />} />
           
           {/* Coach Flow */}
